@@ -1,16 +1,24 @@
-public class Numero {
-    public static void dividir(int a, int b){
-       int x = 0;
+public class Departamento {
+    double valorMeta;
+    double valorAtingidoMeta;
 
-       try {
-           x = a/b;
-       }catch(ArithmeticException e){
-           System.out.println("Nao eh possivel dividir por zero");
-       }finally {
-           System.out.println(
-                   a + " / " + b + " = " + x
-           );
-       }
+    public double getValorMeta() {
+        return valorMeta;
+    }
 
+    public double getValorAtingidoMeta() {
+        return valorAtingidoMeta;
+    }
+
+    public Departamento(double valorMeta, double valorAtingidoMeta) {
+        this.valorMeta = valorMeta;
+        this.valorAtingidoMeta = valorAtingidoMeta;
+    }
+
+    public boolean alcancouMeta(){
+        if (valorAtingidoMeta >= valorMeta){
+            return true;
+        }
+        return false;
     }
 }
