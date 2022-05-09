@@ -1,5 +1,3 @@
-package salario;
-
 public class Empregado {
     double salarioFixo;
 
@@ -10,17 +8,18 @@ public class Empregado {
     public Empregado(double salarioFixo) {
         this.salarioFixo = salarioFixo;
     }
+
     public double calcularBonus(Departamento departamento){
-        double bonus = 0;
-        if(departamento.alcancouMeta()){
-            bonus = this.salarioFixo* 0.1;
-        };
-
-        return bonus;
+        double bonusSalario = 0;
+        if (departamento.alcancouMeta()){
+            bonusSalario = 0.1 * this.salarioFixo;
+        }
+        return bonusSalario;
     }
-    public double calcularSalarioTotal(Departamento departamento){
-        double bonus = calcularBonus(departamento);
 
-        return this.salarioFixo + bonus;
+    public double calcularSalarioTotal(Departamento departamento){
+        double bonusSalario = calcularBonus(departamento);
+
+        return this.salarioFixo + bonusSalario;
     }
 }
