@@ -1,24 +1,11 @@
-public class Departamento {
-    double valorMeta;
-    double valorAtingidoMeta;
+public class LivroEdicaoOuro extends Livro{
 
-    public double getValorMeta() {
-        return valorMeta;
+    public LivroEdicaoOuro(String titulo, String autor, double preco) throws Exception {
+        super(titulo, autor, preco);
     }
 
-    public double getValorAtingidoMeta() {
-        return valorAtingidoMeta;
-    }
-
-    public Departamento(double valorMeta, double valorAtingidoMeta) {
-        this.valorMeta = valorMeta;
-        this.valorAtingidoMeta = valorAtingidoMeta;
-    }
-
-    public boolean alcancouMeta(){
-        if (valorAtingidoMeta >= valorMeta){
-            return true;
-        }
-        return false;
+    @Override
+    public double getPreco() {
+        return preco * 1.3;
     }
 }

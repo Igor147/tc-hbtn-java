@@ -1,11 +1,7 @@
-public class LivroEdicaoOuro extends Livro{
+package exceptions;
 
-    public LivroEdicaoOuro(String titulo, String autor, double preco) throws Exception {
-        super(titulo, autor, preco);
-    }
-
-    @Override
-    public double getPreco() {
-        return preco * 1.3;
+public class LivroInvalidoException extends Exception{
+    public LivroInvalidoException(String message) {
+        super(message);
     }
 }
