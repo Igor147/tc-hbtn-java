@@ -1,53 +1,26 @@
-public class PersonagemGame {
-    private int saudeAtual;
-    private String nome;
-    private String status;
+public class Program {
+    public static void main(String[] args) {
+        PersonagemGame personagem1 = new PersonagemGame(50, "Sonic");
 
-    public PersonagemGame(int saudeAtual, String nome) {
-        setSaudeAtual(saudeAtual);
-        setNome(nome);
-    }
+        personagem1.setNome("");
 
-    public int getSaudeAtual() {
-        return saudeAtual;
-    }
+        System.out.printf("%s, %d, %s\n", personagem1.getNome(), personagem1.getSaudeAtual()
+                , personagem1.getStatus());
 
-    public void setSaudeAtual(int saudeAtual) {
-        this.saudeAtual = saudeAtual;
-        if (this.saudeAtual > 0){
-            this.status = "vivo";
-        } else {
-            this.status = "morto";
-        }
-    }
+        personagem1.receberCura(91);
+        personagem1.setNome(null);
 
-    public String getNome() {
-        return nome;
-    }
+        System.out.printf("%s, %d, %s\n", personagem1.getNome(), personagem1.getSaudeAtual()
+                , personagem1.getStatus());
 
-    public void setNome(String nome) {
-        if (nome != null && nome.length() > 0){
-            this.nome = nome;
-        }
-    }
+        personagem1.tomarDano(25);
 
-    public String getStatus() {
-        return status;
-    }
+        System.out.printf("%s, %d, %s\n", personagem1.getNome(), personagem1.getSaudeAtual()
+                , personagem1.getStatus());
 
-    public void tomarDano(int quantidadeDeDano) {
-        if (getSaudeAtual() - quantidadeDeDano >= 0){
-            setSaudeAtual(getSaudeAtual() - quantidadeDeDano);
-        } else {
-            setSaudeAtual(0);
-        }
-    }
+        personagem1.tomarDano(80);
 
-    public void receberCura(int quantidadeDeCura) {
-        if (getSaudeAtual() + quantidadeDeCura <= 100){
-            setSaudeAtual(getSaudeAtual() + quantidadeDeCura);
-        } else {
-            setSaudeAtual(100);
-        }
+        System.out.printf("%s, %d, %s\n", personagem1.getNome(), personagem1.getSaudeAtual()
+                , personagem1.getStatus());
     }
 }
