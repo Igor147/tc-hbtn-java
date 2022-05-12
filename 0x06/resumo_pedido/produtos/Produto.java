@@ -1,4 +1,5 @@
 package produtos;
+
 public abstract class Produto {
     protected String titulo;
     protected int ano;
@@ -16,5 +17,9 @@ public abstract class Produto {
 
     public double getPrecoBruto() {
         return precoBruto;
+    }
+
+    public String getTitulo() {
+        return titulo;
     }
 }
